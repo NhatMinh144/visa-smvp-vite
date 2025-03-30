@@ -3,6 +3,7 @@ import './App.css';
 import { supabase } from '../supabaseClient';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
+import Dashboard from './pages/Dashboard.jsx';
 
 function App() {
   const [session, setSession] = useState(null)
@@ -42,6 +43,7 @@ function App() {
     <div>
       <h2>Welcome, {session?.user?.email} </h2>
       <button onClick={signOut}>Sign out</button>
+      <Dashboard />  {/* 👈 Show the dashboard here */}
     </div>
       )
   }
